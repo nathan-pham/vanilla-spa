@@ -8,7 +8,7 @@ export default class Dashboard extends View {
 
     render() {
         return `
-            <h1>welcome back, Nathan Pham</h1>
+            <h1>welcome back, nathan</h1>
             <p>this is your dashboard.</p>
         `
     }

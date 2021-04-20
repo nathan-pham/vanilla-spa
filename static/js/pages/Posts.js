@@ -9,11 +9,11 @@ export default class Posts extends View {
     render() {
         return Object.keys(this.params).length
             ? `
-                <h1>Posts</h1>
-                <p>Post ID: ${ this.params.id }</p>
+                <h1>posts</h1>
+                <p>post id: ${ this.params.id }</p>
             `
             : `
-                <h1>All Posts</h1>
+                <h1>all posts</h1>
             `
     }
 }
