@@ -1,4 +1,6 @@
 import Dashboard from "./pages/Dashboard.js"
+import Settings from "./pages/Settings.js"
+import Posts from "./pages/Posts.js"
 
 const pathToRegex = path => new RegExp('^' + path.replace(/\//g, "\\/").replace(/:\w+/g, "(.+)") + '$')
 
@@ -15,9 +17,9 @@ const getParams = match => {
 const router = async () => {
     const routes = [
         { path: '/', view: Dashboard },
-        { path: "/posts", view: Dashboard },
-        { path: "/posts/:id", view: Dashboard },
-        { path: "/settings", view: Dashboard },
+        { path: "/posts", view: Posts },
+        { path: "/posts/:id", view: Posts },
+        { path: "/settings", view: Settings },
     ]
 
     const matches = routes.map(route => ({ route, result: location.pathname.match(pathToRegex(route.path)) }))

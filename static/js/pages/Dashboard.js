@@ -8,11 +8,8 @@ export default class Dashboard extends View {
 
     render() {
         return `
-            <h1>Welcome back, Nathan Pham</h1>
-            <p>Hi there, this is your Dashboard.</p>
-            <p>
-                <a href="/posts" data-link>View recent posts</a>.
-            </p>
+            <h1>welcome back, Nathan Pham</h1>
+            <p>this is your dashboard.</p>
         `
     }
 }
