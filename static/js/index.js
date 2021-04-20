@@ -21,7 +21,7 @@ const router = async () => {
     ]
 
     const matches = routes.map(route => ({ route, result: location.pathname.match(pathToRegex(route.path)) }))
-    const match = potentialMatches.find(potentialMatch => potentialMatch.result !== null)
+    let match = matches.find(potential => potential.result !== null)
 
     if(!match) {
         match = {
@@ -30,8 +30,9 @@ const router = async () => {
         }
     }
 
-    const view = new (match.route.view(getParams(match)))
+    const view = new match.route.view(getParams(match))
     const app = document.getElementById("app-content")
+
     app.innerHTML = await view.render()
     view.hydrate(app)
 }
@@ -51,3 +52,5 @@ document.body.addEventListener("click", (e) => {
 })
 
 window.addEventListener("popstate", router)
+
+router()
